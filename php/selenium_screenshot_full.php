@@ -16,8 +16,6 @@ $capabilities->setCapability(ChromeOptions::CAPABILITY, $options );
 $driver = RemoteWebDriver::create($host, $capabilities);
 $driver->get($url);
 // ウィンドウサイズをブラウザ表示域にする
-$driver->executeScript("return window.scrollTo(0, document.body.scrollWidth);");
-$driver->executeScript("return window.scrollTo(0, document.body.scrollHeight);");
 $w = $driver->executeScript("return document.body.scrollWidth;");
 $h = $driver->executeScript("return document.body.scrollHeight;");
 $dimension = new WebDriverDimension($w, $h);
